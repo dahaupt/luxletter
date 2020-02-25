@@ -48,7 +48,7 @@ call_user_func(
             'luxletter',
             '',
             [
-                'Newsletter' => 'dashboard, list, new, create, enable, disable, delete, receiver',
+                'Newsletter' => 'dashboard, list, new, create, enable, disable, resend, delete, receiver',
             ],
             [
                 'access' => 'user,group',

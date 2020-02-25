@@ -67,6 +67,9 @@
 											<f:link.action action="disable" class="btn btn-warning" arguments="{newsletter:newsletter}">
 												<f:translate key="module.newsletter.list.disable">disable</f:translate>
 											</f:link.action>
+											<f:link.action action="resend" class="btn btn-info" arguments="{newsletter: newsletter}">
+												<i class="fa fa-repeat"></i> <f:translate key="module.newsletter.list.resend">resend</f:translate>
+											</f:link.action>
 										</f:then>
 										<f:else>
 											<f:link.action action="enable" class="btn btn-warning" arguments="{newsletter:newsletter}">

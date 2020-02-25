@@ -33,7 +33,7 @@ class QueueService
     {
         $queueRepository = ObjectUtility::getObjectManager()->get(QueueRepository::class);
         $userRepository = ObjectUtility::getObjectManager()->get(UserRepository::class);
-        $users = $userRepository->getUsersFromGroup($newsletter->getReceiver()->getUid());
+        $users = $userRepository->getUsersFromGroupNotInNewsletterQueue($newsletter);
         $this->signalDispatch(__CLASS__, __FUNCTION__ . 'users', [$users, $newsletter]);
         /** @var User $user */
         foreach ($users as $user) {

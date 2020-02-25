@@ -151,6 +151,10 @@
 				<source>Delete</source>
 				<target state="translated">Löschen</target>
 			</trans-unit>
+			<trans-unit id="module.newsletter.list.resend">
+				<source>Resend</source>
+				<target state="translated">Erneut versenden</target>
+			</trans-unit>
 
 			<trans-unit id="module.newsletter.new.title">
 				<source>Add new newsletter</source>
@@ -284,6 +288,10 @@
 			<trans-unit id="module.newsletter.create.message">
 				<source>Newsletter successfully created</source>
 				<target state="translated">Newsletter erfolgreich erstellt</target>
+			</trans-unit>
+			<trans-unit id="module.newsletter.resend.message">
+				<source>New subscribers added to newsletter queue</source>
+				<target state="translated">Neue Abonnenten zur Newsletter-Warteschlange hinzugefügt</target>
 			</trans-unit>
 
 			<trans-unit id="module.newsletter.delete.message">

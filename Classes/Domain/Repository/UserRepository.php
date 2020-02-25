@@ -4,6 +4,7 @@ namespace In2code\Luxletter\Domain\Repository;
 
 use Doctrine\DBAL\DBALException;
 use In2code\Luxletter\Domain\Model\Dto\Filter;
+use In2code\Luxletter\Domain\Model\Newsletter;
 use In2code\Luxletter\Domain\Model\User;
 use In2code\Luxletter\Utility\DatabaseUtility;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
@@ -34,6 +35,22 @@ class UserRepository extends AbstractRepository
         if ($limit > 0) {
             $query->setLimit($limit);
         }
+        return $query->execute();
+    }
+
+    /**
+     * @param Newsletter $newsletter
+     * @return array|QueryResultInterface
+     */
+    public function getUsersFromGroupNotInNewsletterQueue(Newsletter $newsletter)
+    {
+        $query = $this->createQuery();
+        $query->statement(
+            "SELECT * FROM fe_users
+            WHERE fe_users.usergroup = ? AND fe_users.deleted = 0 AND fe_users.disable = 0 
+              AND fe_users.uid NOT IN( SELECT `user` FROM `tx_luxletter_domain_model_queue` WHERE newsletter = ? )",
+            [$newsletter->getReceiver()->getUid(), $newsletter->getUid()]
+        );
         return $query->execute();
     }
 

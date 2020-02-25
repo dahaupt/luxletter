@@ -111,6 +111,9 @@
 			<trans-unit id="module.newsletter.list.enable">
 				<source>Enable</source>
 			</trans-unit>
+			<trans-unit id="module.newsletter.list.resend">
+				<source>Resend</source>
+			</trans-unit>
 			<trans-unit id="module.newsletter.list.delete">
 				<source>Delete</source>
 			</trans-unit>
@@ -215,7 +218,9 @@
 			<trans-unit id="module.newsletter.create.message">
 				<source>Newsletter successfully created</source>
 			</trans-unit>
-
+			<trans-unit id="module.newsletter.resend.message">
+				<source>New subscribers added to newsletter queue</source>
+			</trans-unit>
 			<trans-unit id="module.newsletter.delete.message">
 				<source>Newsletter successfully deleted</source>
 			</trans-unit>

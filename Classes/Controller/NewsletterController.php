@@ -174,6 +174,18 @@ class NewsletterController extends ActionController
     /**
      * @param Newsletter $newsletter
      * @return void
+     */
+    public function resendAction(Newsletter $newsletter): void
+    {
+        $queueService = ObjectUtility::getObjectManager()->get(QueueService::class);
+        $queueService->addMailReceiversToQueue($newsletter);
+        $this->addFlashMessage(LocalizationUtility::translate('module.newsletter.resend.message'));
+        $this->redirect('list');
+    }
+
+    /**
+     * @param Newsletter $newsletter
+     * @return void
      * @throws IllegalObjectTypeException
      * @throws StopActionException
      * @throws UnsupportedRequestTypeException
